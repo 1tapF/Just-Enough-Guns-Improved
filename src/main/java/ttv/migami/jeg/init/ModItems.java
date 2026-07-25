@@ -377,6 +377,8 @@ public class ModItems {
     public static final RegistryObject<Item> WHITEOUT_SPRAY_CAN = REGISTER.register("whiteout_spray_can",
             () -> new PaintJobCanItem(new Item.Properties().rarity(Rarity.RARE).stacksTo(1), "whiteout"));
 
+    public static final RegistryObject<Item> PIRATE_SPRAY_CAN = REGISTER.register("pirate_spray_can",
+            () -> new PaintJobCanItem(new Item.Properties().rarity(Rarity.RARE).stacksTo(1), "pirate"));
     /*public static final RegistryObject<Item> SCORCHED_SPRAY_CAN = REGISTER.register("scorched_spray_can",
             () -> new PaintJobCanItem(new Item.Properties().rarity(Rarity.RARE).stacksTo(1), "scorched"));*/
 

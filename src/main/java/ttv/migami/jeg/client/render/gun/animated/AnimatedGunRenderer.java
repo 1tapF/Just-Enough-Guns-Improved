@@ -768,12 +768,15 @@ public class AnimatedGunRenderer extends GeoItemRenderer<AnimatedGunItem> implem
 		poseStack.translate(0, 0, 0.15);
 		poseStack.mulPose(Axis.YP.rotationDegrees((recoilSway * recoilReduction) / 5));
 		poseStack.mulPose(Axis.ZP.rotationDegrees((recoilSway * recoilReduction) / 5));
-		poseStack.mulPose(Axis.XP.rotationDegrees((recoilLift * recoilReduction) / 5));
+		// poseStack.mulPose(Axis.XP.rotationDegrees((recoilLift * recoilReduction) / 5));
 		poseStack.translate(0, 0, -0.15);
 	}
 
 	private void applyBobbingTransforms(PoseStack poseStack, float partialTicks)
 	{
+		if (AimingHandler.get().isAiming()) {
+			return;
+		}
 		Minecraft mc = Minecraft.getInstance();
 		if(mc.options.bobView().get() && mc.getCameraEntity() instanceof Player player)
 		{
@@ -791,7 +794,7 @@ public class AnimatedGunRenderer extends GeoItemRenderer<AnimatedGunItem> implem
 			bobbing *= Config.CLIENT.display.bobbingIntensity.get();
 
 			/* The new controlled bobbing */
-			double invertZoomProgress = 1.0 - AimingHandler.get().getNormalisedAdsProgress() * this.sprintIntensity;
+			double invertZoomProgress = 1.0 - AimingHandler.get().getNormalisedAdsProgress();
 			//poseStack.translate((double) (Mth.sin(distanceWalked * (float) Math.PI) * cameraYaw * 0.5F) * invertZoomProgress, (double) (-Math.abs(Mth.cos(distanceWalked * (float) Math.PI) * cameraYaw)) * invertZoomProgress, 0.0D);
 			if (!AimingHandler.get().isAiming()) {
 				poseStack.mulPose(Axis.XP.rotationDegrees((Math.abs(Mth.cos(distanceWalked * (float) Math.PI - 0.2F) * bobbing) * -2.0F) * (float) invertZoomProgress));
@@ -832,13 +835,13 @@ public class AnimatedGunRenderer extends GeoItemRenderer<AnimatedGunItem> implem
 			float bobPitch = Mth.rotLerp(partialTicks, player.xBobO, player.xBob);
 			float headPitch = Mth.rotLerp(partialTicks, player.xRotO, player.getXRot());
 			float swayPitch = headPitch - bobPitch;
-			swayPitch *= 1.0 - 0.5 * AimingHandler.get().getNormalisedAdsProgress();
+			swayPitch *= 1.0 - AimingHandler.get().getNormalisedAdsProgress();
 			poseStack.mulPose(Config.CLIENT.display.swayType.get().getPitchRotation().rotationDegrees(swayPitch * Config.CLIENT.display.swaySensitivity.get().floatValue() / 2));
 
 			float bobYaw = Mth.rotLerp(partialTicks, player.yBobO, player.yBob);
 			float headYaw = Mth.rotLerp(partialTicks, player.yHeadRotO, player.yHeadRot);
 			float swayYaw = headYaw - bobYaw;
-			swayYaw *= 1.0 - 0.5 * AimingHandler.get().getNormalisedAdsProgress();
+			swayYaw *= 1.0 - AimingHandler.get().getNormalisedAdsProgress();
 			poseStack.mulPose(Config.CLIENT.display.swayType.get().getYawRotation().rotationDegrees(swayYaw * Config.CLIENT.display.swaySensitivity.get().floatValue() / 2));
 
 			poseStack.translate(-x, -y, -z);

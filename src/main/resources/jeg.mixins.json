@@ -21,6 +21,7 @@
     "client.HumanoidModelMixin",
     "client.ItemInHandLayerMixin",
     "client.LevelRendererMixin",
+    "client.LocalPlayerMixin",
     "client.MinecraftMixin",
     "client.MouseHandlerMixin",
     "client.PlayerModelMixin"

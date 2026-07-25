@@ -135,17 +135,12 @@ public class AimingHandler
 
         if(this.isAiming())
         {
-            if (!mc.options.keySprint.isDown())
-                player.setSprinting(false);
+            player.setSprinting(false);
             if(!this.aiming)
             {
                 ModSyncedDataKeys.AIMING.setValue(player, true);
                 PacketHandler.getPlayChannel().sendToServer(new C2SMessageAim(true));
                 this.aiming = true;
-            }
-
-            if (getNormalisedAdsProgress() > 0.0 && getNormalisedAdsProgress() <= 0.2) {
-                player.playSound(SoundEvents.SPYGLASS_USE, 1.0F, 1.0F);
             }
 
             if (Config.CLIENT.display.forceFirstPersonOnZoomedAim.get() && getNormalisedAdsProgress() >= 0.2 && getNormalisedAdsProgress() <= 0.95)
@@ -169,9 +164,6 @@ public class AimingHandler
         }
         else
         {
-            if (getNormalisedAdsProgress() > 0.8 && getNormalisedAdsProgress() < 1) {
-                player.playSound(SoundEvents.SPYGLASS_USE, 1.0F, 0.8F);
-            }
             if (this.doTempFirstPerson && getNormalisedAdsProgress()<=0.3)
                 resetPOV = true;
             if(this.aiming)

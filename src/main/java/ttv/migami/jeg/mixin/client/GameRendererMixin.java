@@ -13,8 +13,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ttv.migami.jeg.Config;
 import ttv.migami.jeg.init.ModEffects;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import ttv.migami.jeg.client.handler.AimingHandler;
+
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
+
+    @Inject(method = "bobView(Lcom/mojang/blaze3d/vertex/PoseStack;F)V", at = @At("HEAD"), cancellable = true)
+    private void onBobView(PoseStack pPoseStack, float pPartialTicks, CallbackInfo ci) {
+        if (AimingHandler.get().isAiming()) {
+            ci.cancel();
+        }
+    }
 
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/profiling/ProfilerFiller;popPush(Ljava/lang/String;)V", ordinal = 0, shift = At.Shift.AFTER))
     public void updateCameraAndRender(float partialTicks, long nanoTime, boolean renderWorldIn, CallbackInfo ci) {
