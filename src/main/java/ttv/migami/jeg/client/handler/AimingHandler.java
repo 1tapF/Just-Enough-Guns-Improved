@@ -135,8 +135,7 @@ public class AimingHandler
 
         if(this.isAiming())
         {
-            if (!mc.options.keySprint.isDown())
-                player.setSprinting(false);
+            player.setSprinting(false);
             if(!this.aiming)
             {
                 ModSyncedDataKeys.AIMING.setValue(player, true);
