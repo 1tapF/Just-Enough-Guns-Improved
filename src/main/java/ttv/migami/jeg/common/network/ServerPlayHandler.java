@@ -418,10 +418,7 @@ public class ServerPlayHandler
         {
             fireSound = modifiedGun.getSounds().getSilencedFire();
         }
-        else if(!player.isUnderWater() && stack.isEnchanted() && Config.CLIENT.sounds.enchantSound.get())
-        {
-            fireSound = modifiedGun.getSounds().getEnchantedFire();
-        }
+
         if(fireSound != null)
         {
             return fireSound;

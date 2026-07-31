@@ -1005,8 +1005,8 @@ public class AnimatedGunRenderer extends GeoItemRenderer<AnimatedGunItem> implem
 		// Center the texture
 		poseStack.translate(-0.5, -0.5, 0);
 
-		float minU = weapon.isEnchanted() ? 0.5F : 0.0F;
-		float maxU = weapon.isEnchanted() ? 1.0F : 0.5F;
+		float minU = 0.0F;
+		float maxU = 0.5F;
 
 		if (weapon.getItem() == ModItems.SUBSONIC_RIFLE.get() ||
 				weapon.getItem() == ModItems.FLAMETHROWER.get() ||

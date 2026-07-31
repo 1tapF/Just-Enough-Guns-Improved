@@ -253,7 +253,8 @@ public class GunItem extends Item implements IColored, IMeta {
                 tooltip.add(Component.translatable("info.jeg.hold_fire").withStyle(ChatFormatting.WHITE));
             }
 
-            if (this == ModItems.SUBSONIC_RIFLE.get() || this == ModItems.HYPERSONIC_CANNON.get() ||
+            if (this == ModItems.SUBSONIC_RIFLE.get() ||
+                    this == ModItems.HYPERSONIC_CANNON.get() ||
                     this == ModItems.SUPERSONIC_SHOTGUN.get()) {
                 tooltip.add(Component.literal(""));
                 tooltip.add(Component.translatable("info.jeg.echo_shard").withStyle(ChatFormatting.WHITE));

@@ -1381,7 +1381,7 @@ public class GunGen extends GunProvider
                 .setAdditionalReloadTimer(0)
 
                 // Projectile
-                .setAmmo(Items.ECHO_SHARD)
+                .setAmmo(ModItems.RIFLE_AMMO.get())
                 .setEjectsCasing(true)
                 .setProjectileVisible(false)
                 .setIgnoresBlocks(true)
@@ -1392,7 +1392,7 @@ public class GunGen extends GunProvider
                 .setProjectileLife(50)
                 .setProjectileTrailLengthMultiplier(2)
                 .setProjectileTrailColor(0xFFFF00)
-                .setHideTrail(true)
+                .setHideTrail(false)
                 .setHitsRubberFruit(true)
 
                 // Sounds
