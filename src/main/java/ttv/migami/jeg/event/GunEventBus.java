@@ -726,10 +726,11 @@ public class GunEventBus {
     }
 
     public static void recoil(Player player, double force) {
-        Vec3 lookVec = player.getLookAngle();
-        double opposite = force;
-        player.push(lookVec.x * opposite, lookVec.y * opposite, lookVec.z * opposite);
-        player.fallDistance = 0;
+        // Disabled shooter pushback
+        // Vec3 lookVec = player.getLookAngle();
+        // double opposite = force;
+        // player.push(lookVec.x * opposite, lookVec.y * opposite, lookVec.z * opposite);
+        // player.fallDistance = 0;
     }
 
     public static void firingSmoke(Level level, Player player) {
