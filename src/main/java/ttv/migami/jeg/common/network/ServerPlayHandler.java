@@ -418,7 +418,7 @@ public class ServerPlayHandler
         {
             fireSound = modifiedGun.getSounds().getSilencedFire();
         }
-
+		
         if(fireSound != null)
         {
             return fireSound;

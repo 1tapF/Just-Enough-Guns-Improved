@@ -294,7 +294,7 @@ public class ShootingHandler
 
                 if(KeyBinds.getShootMapping().isDown())
                 {
-                    ShootTracker tracker = ShootTracker.getShootTracker(player);
+                    ItemCooldowns tracker = player.getCooldowns();
                     if(gun.getGeneral().getOverheatTimer() != 0 && overheatTimer < gun.getGeneral().getOverheatTimer()) {
                         if (heldItem.getItem() instanceof AnimatedGunItem animatedGunItem) {
                             final long id = GeoItem.getId(player.getMainHandItem());
@@ -306,7 +306,7 @@ public class ShootingHandler
                             overheatTimer++;
                         }
                         if (overheatTimer >= gun.getGeneral().getOverheatTimer()) {
-                            tracker.putCustomCooldown(heldItem, 80 * 50);
+                            tracker.addCooldown(heldItem.getItem(), 80);
                             if (heldItem.is(ModItems.FLAMETHROWER.get())) {
                                 PacketHandler.getPlayChannel().sendToServer(new C2SMessageBurnPlayer());
                             }
@@ -316,7 +316,7 @@ public class ShootingHandler
                         }
                     }
                     if(gun.getGeneral().getMaxHoldFire() != 0) {
-                        if(holdFire < gun.getGeneral().getMaxHoldFire() && !tracker.hasCooldown(heldItem)) {
+                        if(holdFire < gun.getGeneral().getMaxHoldFire() && !tracker.isOnCooldown(heldItem.getItem())) {
                             ChargeTracker.updateChargeTime(player, heldItem, true);
                             previouslyPressed = true;
                             holdFire++;
@@ -324,7 +324,7 @@ public class ShootingHandler
                     }
                     if(gun.getGeneral().getFireTimer() != 0)
                     {
-                        if(fireTimer < gun.getGeneral().getFireTimer() && !tracker.hasCooldown(heldItem)) {
+                        if(fireTimer < gun.getGeneral().getFireTimer() && !tracker.isOnCooldown(heldItem.getItem())) {
                             if (fireTimer == 2)
                             {
                                 PacketHandler.getPlayChannel().sendToServer(new C2SMessagePreFireSound(player));
@@ -392,10 +392,10 @@ public class ShootingHandler
         holdFire = 0;
         previouslyPressed = false;
 
-        ShootTracker tracker = ShootTracker.getShootTracker(player);
+        ItemCooldowns tracker = player.getCooldowns();
         int maxDamage = heldItem.getMaxDamage();
         int currentDamage = heldItem.getDamageValue();
-        if(!tracker.hasCooldown(heldItem))
+        if(!tracker.isOnCooldown(heldItem.getItem()))
         {
             GunItem gunItem = (GunItem) heldItem.getItem();
             Gun modifiedGun = gunItem.getModifiedGun(heldItem);
@@ -409,7 +409,7 @@ public class ShootingHandler
 
             if(!stack.isDamageableItem() || currentDamage < (maxDamage - 1))
             {
-                tracker.putCooldown(heldItem, gunItem, modifiedGun);
+                tracker.addCooldown(heldItem.getItem(), rate);
 
                 // Burst code by NineZero!
                 int gunBurstCount = modifiedGun.getGeneral().getBurstAmount();
@@ -417,7 +417,7 @@ public class ShootingHandler
                 {
                     // No shots left
                     if (ModSyncedDataKeys.BURST_COUNT.getValue(player) == 1) {
-                        tracker.putCustomCooldown(heldItem, modifiedGun.getGeneral().getBurstDelay() * 50);
+                        tracker.addCooldown(heldItem.getItem(), modifiedGun.getGeneral().getBurstDelay());
                     }
 
                     // Burst has not begun yet:

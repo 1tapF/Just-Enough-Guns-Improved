@@ -37,7 +37,7 @@ public class MouseHandlerMixin
                     if(modifiedGun.getModules().getZoom() != null)
                     {
                         float modifier = Gun.getFovModifier(heldItem, modifiedGun);
-                        additionalAdsSensitivity = Mth.clamp(1.0F - (1.0F / modifier) / 10F, 0.0F, 1.0F);
+                        additionalAdsSensitivity = Mth.clamp(1.0F - (1.0F / modifier) / 13F, 0.0F, 1.0F);
                     }
                 }
             }
