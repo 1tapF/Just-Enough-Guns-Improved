@@ -27,54 +27,54 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> REVOLVER = REGISTER.register("revolver",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128),
+                    .durability(640),
                     "revolver"
             ));
     public static final RegistryObject<AnimatedGunItem>WATERPIPE_SHOTGUN = REGISTER.register("waterpipe_shotgun",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128),
+                    .durability(640),
                     "waterpipe_shotgun"
             ));
     public static final RegistryObject<AnimatedGunItem>CUSTOM_SMG = REGISTER.register("custom_smg",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(312)
+                    .durability(1560)
                     .rarity(Rarity.UNCOMMON),
                     "custom_smg"
             ));
     public static final RegistryObject<AnimatedGunItem>DOUBLE_BARREL_SHOTGUN = REGISTER.register("double_barrel_shotgun",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128),
+                    .durability(640),
                     "double_barrel_shotgun"
             ));
     /* Gunmetal Tier */
     public static final RegistryObject<AnimatedGunItem> SEMI_AUTO_PISTOL = REGISTER.register("semi_auto_pistol",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(256)
+                    .durability(1280)
                     .rarity(Rarity.UNCOMMON),
                     "semi_auto_pistol"
             ));
     public static final RegistryObject<AnimatedGunItem> SEMI_AUTO_RIFLE = REGISTER.register("semi_auto_rifle",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.UNCOMMON),
                     "semi_auto_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> ASSAULT_RIFLE = REGISTER.register("assault_rifle",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.RARE),
                     "assault_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> PUMP_SHOTGUN = REGISTER.register("pump_shotgun",
             () -> new AnimatedMakeshiftGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.RARE),
                     "pump_shotgun"
             ));
@@ -82,35 +82,35 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> COMBAT_PISTOL = REGISTER.register("combat_pistol",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(480)
+                    .durability(2400)
                     .rarity(Rarity.RARE),
                     "combat_pistol"
             ));
     public static final RegistryObject<AnimatedGunItem> BURST_RIFLE = REGISTER.register("burst_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(640)
+                    .durability(3200)
                     .rarity(Rarity.EPIC),
                     "burst_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> COMBAT_RIFLE = REGISTER.register("combat_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(640)
+                    .durability(3200)
                     .rarity(Rarity.EPIC),
                     "combat_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> BOLT_ACTION_RIFLE = REGISTER.register("bolt_action_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.EPIC),
                     "bolt_action_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> FLARE_GUN = REGISTER.register("flare_gun",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(32)
+                    .durability(160)
                     .rarity(Rarity.UNCOMMON),
                     "flare_gun"
             ));
@@ -119,21 +119,21 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> REPEATING_SHOTGUN = REGISTER.register("repeating_shotgun",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.EPIC),
                     "repeating_shotgun"
             ));
     public static final RegistryObject<AnimatedGunItem> INFANTRY_RIFLE = REGISTER.register("infantry_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(512)
+                    .durability(2560)
                     .rarity(Rarity.EPIC),
                     "infantry_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> SERVICE_RIFLE = REGISTER.register("service_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(512)
+                    .durability(2560)
                     .rarity(Rarity.EPIC),
                     "service_rifle"
             ));
@@ -142,14 +142,14 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> BLOSSOM_RIFLE = REGISTER.register("blossom_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(512)
+                    .durability(2560)
                     .rarity(Rarity.EPIC),
                     "blossom_rifle"
             ));
     public static final RegistryObject<GunItem> HOLY_SHOTGUN = REGISTER.register("holy_shotgun",
             () -> new GunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.EPIC)
             ));
 
@@ -157,13 +157,13 @@ public class ModItems {
     public static final RegistryObject<GunItem> ATLANTEAN_SPEAR = REGISTER.register("atlantean_spear",
             () -> new GunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128)
+                    .durability(640)
                     .rarity(Rarity.EPIC)
             ));
     public static final RegistryObject<GunItem> TYPHOONEE = REGISTER.register("typhoonee",
             () -> new GunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128)
+                    .durability(640)
                     .rarity(Rarity.EPIC)
             ));
 
@@ -178,14 +178,14 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> HOLLENFIRE_MK2 = REGISTER.register("hollenfire_mk2",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(400)
+                    .durability(2000)
                     .rarity(Rarity.EPIC),
                     "hollenfire_mk2"
             ));
     public static final RegistryObject<AnimatedGunItem> SOULHUNTER_MK2 = REGISTER.register("soulhunter_mk2",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(400)
+                    .durability(2000)
                     .rarity(Rarity.EPIC),
                     "soulhunter_mk2"
             ));
@@ -194,21 +194,21 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> SUBSONIC_RIFLE = REGISTER.register("subsonic_rifle",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(384)
+                    .durability(1920)
                     .rarity(Rarity.EPIC),
                     "subsonic_rifle"
             ));
     public static final RegistryObject<AnimatedGunItem> SUPERSONIC_SHOTGUN = REGISTER.register("supersonic_shotgun",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(86)
+                    .durability(430)
                     .rarity(Rarity.EPIC),
                     "supersonic_shotgun"
             ));
     public static final RegistryObject<AnimatedGunItem> HYPERSONIC_CANNON = REGISTER.register("hypersonic_cannon",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(100)
+                    .durability(500)
                     .rarity(Rarity.EPIC),
                     "hypersonic_cannon"
             ));
@@ -216,49 +216,49 @@ public class ModItems {
     public static final RegistryObject<AnimatedGunItem> ROCKET_LAUNCHER = REGISTER.register("rocket_launcher",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(32)
+                    .durability(160)
                     .rarity(Rarity.EPIC),
                     "rocket_launcher"
             ));
     public static final RegistryObject<AnimatedBowItem> PRIMITIVE_BOW = REGISTER.register("primitive_bow",
             () -> new AnimatedBowItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128)
+                    .durability(640)
                     .rarity(Rarity.RARE),
                     "primitive_bow"
             ));
     public static final RegistryObject<AnimatedBowItem> COMPOUND_BOW = REGISTER.register("compound_bow",
             () -> new AnimatedBowItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(128)
+                    .durability(640)
                     .rarity(Rarity.EPIC),
                     "compound_bow"
             ));
     public static final RegistryObject<AnimatedGunItem> GRENADE_LAUNCHER = REGISTER.register("grenade_launcher",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(64)
+                    .durability(320)
                     .rarity(Rarity.EPIC),
                     "grenade_launcher"
             ));
     public static final RegistryObject<AnimatedGunItem> LIGHT_MACHINE_GUN = REGISTER.register("light_machine_gun",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(1024)
+                    .durability(5120)
                     .rarity(Rarity.EPIC),
                     "light_machine_gun"
             ));
     public static final RegistryObject<AnimatedGunItem> FLAMETHROWER = REGISTER.register("flamethrower",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(1024)
+                    .durability(5120)
                     .rarity(Rarity.EPIC),
                     "flamethrower"
             ));
     public static final RegistryObject<AnimatedGunItem> MINIGUN = REGISTER.register("minigun",
             () -> new AnimatedGunItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(2048)
+                    .durability(10240)
                     .rarity(Rarity.EPIC),
                     "minigun"
             ));
@@ -402,31 +402,31 @@ public class ModItems {
     public static final RegistryObject<Item> REFLEX_SIGHT = REGISTER.register("reflex_sight",
             () -> new ScopeItem(Attachments.REFLEX_SIGHT, new Item.Properties()
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     public static final RegistryObject<Item> MONOCLE_SIGHT = REGISTER.register("monocle_sight",
             () -> new ScopeItem(Attachments.MONOCLE_SIGHT, new Item.Properties()
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     public static final RegistryObject<Item> HOLOGRAPHIC_SIGHT = REGISTER.register("holographic_sight",
             () -> new ScopeItem(Attachments.HOLOGRAPHIC_SIGHT, new Item.Properties().rarity(Rarity.UNCOMMON)
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     public static final RegistryObject<Item> COMBAT_SCOPE = REGISTER.register("combat_scope",
             () -> new ScopeItem(Attachments.COMBAT_SCOPE, new Item.Properties().rarity(Rarity.RARE)
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     public static final RegistryObject<Item> TELESCOPIC_SIGHT = REGISTER.register("telescopic_sight",
             () -> new TelescopicScopeItem(Attachments.TELESCOPIC_SIGHT, new Item.Properties().rarity(Rarity.EPIC)
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     /* Stock Attachments */
@@ -435,7 +435,7 @@ public class ModItems {
                     GunModifiers.MAKESHIFT_CONTROL),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(300)
+                            .durability(1500)
                             
                     , false
             ));
@@ -444,7 +444,7 @@ public class ModItems {
                     GunModifiers.BETTER_CONTROL),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(600)
+                            .durability(3000)
                             
                     , false
             ));
@@ -453,7 +453,7 @@ public class ModItems {
                     GunModifiers.STABILISED),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(800)
+                            .durability(4000)
                             
                     , false
             ));
@@ -462,7 +462,7 @@ public class ModItems {
                     GunModifiers.SUPER_STABILISED),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(1000)
+                            .durability(5000)
             ));
 
     /* Barrel Attachments */
@@ -472,7 +472,7 @@ public class ModItems {
                     GunModifiers.SILENCED),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(500)
+                            .durability(2500)
             ));
                             //GunModifiers.REDUCED_DAMAGE),
 
@@ -482,7 +482,7 @@ public class ModItems {
                     GunModifiers.EXPLOSIVE_AMMO, GunModifiers.INCREASED_JAMMING, GunModifiers.INSCREASED_DAMAGE, GunModifiers.WORSE_CONTROL),
                     new Item.Properties()
                             .stacksTo(1)
-                            .durability(64)
+                            .durability(320)
                             .rarity(Rarity.UNCOMMON)
             ));
 
@@ -493,7 +493,7 @@ public class ModItems {
                     new Item.Properties()
                             .rarity(Rarity.RARE)
                             .stacksTo(1)
-                            .durability(64)
+                            .durability(320)
             ));
 
     /* Under Barrel Attachments */
@@ -502,14 +502,14 @@ public class ModItems {
                     GunModifiers.LIGHT_RECOIL), new
                     Item.Properties()
                     .stacksTo(1)
-                    .durability(600)
+                    .durability(3000)
             ));
     public static final RegistryObject<Item> VERTICAL_GRIP = REGISTER.register("vertical_grip",
             () -> new UnderBarrelItem(UnderBarrel.create(
                     GunModifiers.REDUCED_RECOIL), new
                     Item.Properties()
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     public static final RegistryObject<Item> ANGLED_GRIP = REGISTER.register("angled_grip",
@@ -517,7 +517,7 @@ public class ModItems {
                     GunModifiers.REDUCED_RECOIL), new
                     Item.Properties()
                     .stacksTo(1)
-                    .durability(800)
+                    .durability(4000)
             ));
 
     /* Magazine */

@@ -38,6 +38,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import ttv.migami.jeg.Config;
+import ttv.migami.jeg.common.ShootTracker;
 import ttv.migami.jeg.Reference;
 import ttv.migami.jeg.common.FireMode;
 import ttv.migami.jeg.common.Gun;
@@ -168,7 +169,7 @@ public class GunEventBus {
             if (heldItem.isDamageableItem() && tag != null) {
                 if (heldItem.getDamageValue() >= (heldItem.getMaxDamage() - damageAmount)) {
                     level.playSound(player, player.blockPosition(), SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    event.getEntity().getCooldowns().addCooldown(event.getStack().getItem(), gun.getGeneral().getRate());
+                    ShootTracker.getShootTracker(player).putCustomCooldown(heldItem, gun.getGeneral().getRate() * 50);
                     event.setCanceled(true);
                 }
 
@@ -191,7 +192,7 @@ public class GunEventBus {
                         Component message = Component.translatable("chat.jeg.jam")
                                 .withStyle(ChatFormatting.GRAY);
                         player.displayClientMessage(message, true);
-                        event.getEntity().getCooldowns().addCooldown(event.getStack().getItem(), (coolDown));
+                        ShootTracker.getShootTracker(player).putCustomCooldown(heldItem, coolDown * 50);
                         event.setCanceled(true);
                     }
                 } else if (tag.getInt("AmmoCount") >= 1) {
